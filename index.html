@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Geldautomat | von Dennis & Adrian</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Uncomment for IE9 "support" -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    
+    <!-- *** CSS *** -->
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+    
+    <!-- *** JS *** -->
+    <!-- <script src="main.js"></script> -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+
+<!-- Uncomment for 800px requirement. -->
+
+<body width="800"> <!-- style="background-color: #3f3f3f"> -->
+<!-- <body> -->
+
+    <!-- *** Navigation Bar Start ***-->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">Der Geldautomat</a>
+        <ul class="navbar-nav">
+            <!-- Einstellungen Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown"><i class="fas fa-cog"></i>
+                    Einstellungen</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">PIN-Zähler zurücksetzen</a>
+                    <a class="dropdown-item" href="#">???</a>
+                    <a class="dropdown-item" href="#">???</a>
+                </div>
+            </li>
+            <!-- Entwickler Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-light" href="#" id="navbardrop" data-toggle="dropdown"><i class='fas fa-users'></i>
+                    Entwickler</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="https://github.com/DSchndr"><i class="fas fa-user-alt fa-fw"></i>
+                        Dennis Schneider</a>
+                    <a class="dropdown-item" href="#"><i class="fas fa-user-alt fa-fw"></i> Adrian Schäfer</a>
+                    <a class="dropdown-item text-primary" href="https://github.com/DSchndr/Geldautomat"><i class="fas fa-home fa-fw"></i>
+                        [Projektseite]</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <!-- NAVBAR END -->
+
+
+    <!-- Main Geldautomat div -->
+    <div id="geldautomat-main" style="padding-top: 80px">
+
+        <!-- *** ATM Area *** -->
+        <div id="display" class="jumbotron">
+            <table>
+                <tr>
+                    <td>
+                        <div class="d-flex flex-column" style="width:20; padding-left: 0px">
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="width: 700px; height: inherit; border: 5px solid red;">
+                            <p>Ich bin ein Bankautomat</p>
+                            <p>Beep boop</p>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="d-flex flex-column" style="width:50">
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- *** Keypad *** -->
+        <div id="keypad" style="margin: auto; width:50%">
+            <table class="table-bordered">
+                <tr class="keypad">
+                    <td><button type="button" class="btn btn-outline-dark">1</button></td>
+                    <td><button type="button" class="btn btn-outline-dark">2</button></td>
+                    <td><button type="button" class="btn btn-outline-dark">3</button></td>
+                    <td><button type="button" class="btn btn-danger">Abbruch</button></td>
+                </tr>
+                <tr class="keypad">
+                    <td><button type="button" class="btn btn-outline-dark">4</button></td>
+                    <td><button type="button" class="btn btn-outline-dark">5</button></td>
+                    <td><button type="button" class="btn btn-outline-dark">6</button></td>
+                    <td><button type="button" class="btn btn-warning">Korrektur</button></td>
+                </tr>
+                <tr class="keypad">
+                    <td><button type="button" class="btn btn-outline-dark">7</button></td>
+                    <td><button type="button" class="btn btn-outline-dark">8</button></td>
+                    <td><button type="button" class="btn btn-outline-dark">9</button></td>
+                    <td><button type="button" class="btn btn-light">Hilfe</button></td>
+                </tr>
+                <tr class="keypad">
+                    <td></td>
+                    <td><button type="button" class="btn btn-outline-dark">0</button></td>
+                    <td></td>
+                    <td><button type="button" class="btn btn-success">Bestätigung</button></td>
+                </tr>
+            </table>
+        </div>
+
+        
+    </div>
+
+
+</body>
+
+</html>
