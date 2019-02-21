@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="fontawesome/css/all.css" />
     
     <!-- *** JS *** -->
-    <!-- <script src="main.js"></script> -->
+    <script src="main.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -60,24 +60,25 @@
 
 
     <!-- Main Geldautomat div -->
-    <div id="geldautomat-main" style="padding-top: 80px">
+    <div id="geldautomat-main" style="padding-top: 70px">
 
         <!-- *** ATM Area *** -->
-        <div id="display" class="jumbotron">
+        <div id="display" class="jumbotron" style="padding-top: 10px; padding-bottom: 10px">
+            <h1 style="text-align: center">HarzIV-Bank</h1>
             <table>
                 <tr>
                     <td>
-                        <div class="d-flex flex-column" style="width:20; padding-left: 0px">
+                        <div class="d-flex flex-column" style="width:10; padding-left: 0px">
                             <button>1</button>
                             <button>2</button>
                             <button>3</button>
                             <button>4</button>
                         </div>
                     </td>
-                    <td>
-                        <div style="width: 700px; height: inherit; border: 5px solid red;">
-                            <p>Ich bin ein Bankautomat</p>
-                            <p>Beep boop</p>
+                    <td id="geldautomat-screen">
+                        <div style="width: 670px; min-height: 250px; max-height: 250px; border: 5px solid red;">
+                            <h3 style="text-align: center" id="title">PIN-EINGABE</h3>
+                            <h1 style="text-align: center; font-weight:bolder; font-size: 60pt" id="pin"></h1>
                         </div>
                     </td>
                     <td>
@@ -93,36 +94,36 @@
         </div>
 
         <!-- *** Keypad *** -->
-        <div id="keypad" style="margin: auto; width:50%">
+        <div id="keypad" style="margin: auto; width:30%;">
             <table class="table-bordered">
                 <tr class="keypad">
-                    <td><button type="button" class="btn btn-outline-dark">1</button></td>
-                    <td><button type="button" class="btn btn-outline-dark">2</button></td>
-                    <td><button type="button" class="btn btn-outline-dark">3</button></td>
-                    <td><button type="button" class="btn btn-danger">Abbruch</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('1')">1</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('2')">2</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('3')">3</button></td>
+                    <td><button type="button" class="btn btn-danger" onclick="buttonpress('a')">Abbruch</button></td>
                 </tr>
                 <tr class="keypad">
-                    <td><button type="button" class="btn btn-outline-dark">4</button></td>
-                    <td><button type="button" class="btn btn-outline-dark">5</button></td>
-                    <td><button type="button" class="btn btn-outline-dark">6</button></td>
-                    <td><button type="button" class="btn btn-warning">Korrektur</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('4')">4</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('5')">5</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('6')">6</button></td>
+                    <td><button type="button" class="btn btn-warning" onclick="buttonpress('k')">Korrektur</button></td>
                 </tr>
                 <tr class="keypad">
-                    <td><button type="button" class="btn btn-outline-dark">7</button></td>
-                    <td><button type="button" class="btn btn-outline-dark">8</button></td>
-                    <td><button type="button" class="btn btn-outline-dark">9</button></td>
-                    <td><button type="button" class="btn btn-light">Hilfe</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('7')">7</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('8')">8</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('9')">9</button></td>
+                    <td><button type="button" class="btn btn-light" onclick="buttonpress('h')">Hilfe</button></td>
                 </tr>
                 <tr class="keypad">
                     <td></td>
-                    <td><button type="button" class="btn btn-outline-dark">0</button></td>
+                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('0')">0</button></td>
                     <td></td>
-                    <td><button type="button" class="btn btn-success">Bestätigung</button></td>
+                    <td><button type="button" class="btn btn-success" onclick="buttonpress('b')">Bestätigung</button></td>
                 </tr>
             </table>
         </div>
 
-        
+
     </div>
 
 
