@@ -69,22 +69,40 @@
             <table>
                 <tr>
                     <td>
-                        <div class="d-flex flex-column" style="width:10; padding-left: 0px">
+                        <div class="d-flex flex-column" style="width:10; padding-left: 0px; visibility: hidden;">
                             <button>1</button>
                             <button>2</button>
                             <button>3</button>
                             <button>4</button>
                         </div>
                     </td>
+
                     <td id="geldautomat-screen">
                         <div style="width: 670px; min-height: 250px; max-height: 250px; border: 5px solid red;">
                             <h3 style="text-align: center" id="title">Bitte Karte reinstecken</h3>
                             <h1 style="text-align: center; font-weight:bolder; font-size: 60pt" id="pin"></h1>
                             <h2 style="text-align: center;" id="message"></h2>
+
+                            <!-- $$$ Selection -->
+                            <table style="width: 100%; visibility: hidden;">
+                                <tr style="float: left;">
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(5)">5 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(10)">10 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(20)">20 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(50)">50 Geld</button></td>
+                                </tr>
+                                <tr style="float: right;">
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(100)">100 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(200)">200 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(500)">500 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger" onclick="chosemoney()">Eigener Betrag</button></td>
+                                </tr>
+                            </table>
+                            <!-- $$$ -->
                         </div>
                     </td>
                     <td>
-                        <div class="d-flex flex-column" style="width:50">
+                        <div class="d-flex flex-column" style="width:50; visibility: hidden;">
                             <button>1</button>
                             <button>2</button>
                             <button>3</button>
