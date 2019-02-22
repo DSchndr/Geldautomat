@@ -107,4 +107,5 @@ function hauptmenu() {
     clearpindiv();
     title.innerText = "Hauptmenü";
     message.innerText = "";
+    moneybuttons.style.display = "table";
 }
