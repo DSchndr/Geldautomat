@@ -2,7 +2,9 @@
 
 /* 
 Todo:
-- Prüfen ob eine karte eingesetzt wurde
+- Korrekturbutton
+- Hilfebutton
+- Hauptmenü
 */
 
 
@@ -13,8 +15,18 @@ var PINlength = "4";
 var PINTries = "2"; //2, da erster versuch schon der dritte ist ;)
 var PINstring = "";
 var clearonpress = false;
-var pinmenu = true;
+
+var insertcardmenu = true;
+var pinmenu = false;
 var mainmenu = false;
+
+function insertcard() {
+    insertcardmenu = false;
+    pinmenu = true;
+    title.innerText = "PIN-EINGABE";
+    message.innerText ="Tipp: 1337";
+    return;
+}
 
 // Keypad handling functions
 
@@ -41,12 +53,14 @@ function buttonpress(Button) {
         if (Button == "b") {
             //pin zu kurz
             if (PINstring.length < PINlength) {
-                alert("Pin zu kurz");
+                //alert("Pin zu kurz");
+                message.innerText = "PIN zu kurz";
                 return;
             }
             //pin zu lang
             if (PINstring.length > PINlength) {
-                alert("PIN zu lang");
+                //alert("PIN zu lang");
+                message.innerText = "PIN zu lang";
                 return;
             }
             //pin richtig
@@ -57,13 +71,14 @@ function buttonpress(Button) {
             //pin falsch
             else {
                 if (PINTries >= "1") {
-                    pin.innerText = "PIN Falsch! " + PINTries + " versuche übrig.";
+                    message.innerText = "PIN Falsch! " + PINTries + " versuche übrig.";
                     PINTries = PINTries - 1;
                     clearonpress = true;
                     return;
                 }
                 else {
-                    alert("Keine versuche mehr übrig.");
+                    //alert("Keine versuche mehr übrig.");
+                    message.innerText = "Keine versuche mehr übrig.";
                     return;
                 }
             }
@@ -86,9 +101,10 @@ function clearpindiv() {
 
 //setzt das hauptmenü in die seite rein.
 function hauptmenu() {
-    alert("Pin richtig");
+    //alert("Pin richtig");
     pinmenu = false;
     mainmenu = true;
     clearpindiv();
     title.innerText = "Hauptmenü";
+    message.innerText = "";
 }

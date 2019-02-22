@@ -10,12 +10,12 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
-    
+
     <!-- *** CSS *** -->
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="fontawesome/css/all.css" />
-    
+
     <!-- *** JS *** -->
     <script src="main.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
@@ -24,8 +24,9 @@
 
 <!-- Uncomment for 800px requirement. -->
 
-<body width="800"> <!-- style="background-color: #3f3f3f"> -->
-<!-- <body> -->
+<body width="800">
+    <!-- style="background-color: #3f3f3f"> -->
+    <!-- <body> -->
 
     <!-- *** Navigation Bar Start ***-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
@@ -77,8 +78,9 @@
                     </td>
                     <td id="geldautomat-screen">
                         <div style="width: 670px; min-height: 250px; max-height: 250px; border: 5px solid red;">
-                            <h3 style="text-align: center" id="title">PIN-EINGABE</h3>
+                            <h3 style="text-align: center" id="title">Bitte Karte reinstecken</h3>
                             <h1 style="text-align: center; font-weight:bolder; font-size: 60pt" id="pin"></h1>
+                            <h2 style="text-align: center;" id="message"></h2>
                         </div>
                     </td>
                     <td>
@@ -125,6 +127,7 @@
                     <td><button type="button" class="btn btn-success" onclick="buttonpress('b')">Bestätigung</button></td>
                 </tr>
             </table>
+            <button type="button" class="btn btn-danger" onclick="insertcard()">Karte einsetzen</button>
         </div>
 
 
