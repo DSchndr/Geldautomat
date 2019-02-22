@@ -4,7 +4,6 @@
 Todo:
 - Korrekturbutton
 - Hilfebutton
-- Hauptmenü
 */
 
 
@@ -19,14 +18,18 @@ var clearonpress = false;
 var insertcardmenuv = true;
 var pinmenu = false;
 var mainmenu = false;
+var placeholder = false;
 
 function insertcardmenu() {
     title.innerText = "Bitte Karte reinstecken";
+    message.innerText = "";
     moneybuttons.style.display = "none";
     pic.style.display = "none";
+    ausgabeschacht.style.backgroundColor = "#3f3f3f";
     pinmenu = false;
     insertcardmenuv = true;
     mainmenu = false;
+    return;
 }
 
 function insertcard() {
@@ -34,21 +37,24 @@ function insertcard() {
     pinmenu = true;
     title.innerText = "PIN-EINGABE";
     message.innerText = "Tipp: 1337";
-    pin.innerText = ""
+    pin.innerText = "⠀" //Wir benutzen einen unicode "buchstaben" als platzhalter.
     PINstring = ""
+    placeholder = true;
     return;
 }
 
 // Keypad handling functions
 
 function buttonpress(Button) {
-    console.debug("BUTTON: " + Button);
+    //console.debug("BUTTON: " + Button);
+
     if (mainmenu) {
         if (Button == "a") {
             insertcardmenu();
             return;
         }
     }
+
     if (pinmenu) {
         // Wenn clearonpress wahr oder taste a gedrückt wurde -> PIN feld säubern
         if (clearonpress) {
@@ -104,9 +110,13 @@ function buttonpress(Button) {
         }
         //Sternchen in Pindiv einsetzen.
         if (PINstring.length <= PINlength) {
+            if (placeholder) {
+                placeholder = false;
+                pin.innerText = "";
+            }
             pin.innerText = pin.innerText + "*";
             PINstring = PINstring + Button;
-            console.debug("PINSTRING: " + PINstring);
+            //console.debug("PINSTRING: " + PINstring);
         }
     }
 }
@@ -128,10 +138,12 @@ function hauptmenu() {
     message.innerText = "";
     moneybuttons.style.display = "table";
     pic.style.display = "none";
+    ausgabeschacht.style.backgroundColor = "#3f3f3f";
 }
 
 function money(m) {
     pic.style.display = "block";
+    ausgabeschacht.style.backgroundColor = "#ffffff";
     switch (m) {
         case 5:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
@@ -154,6 +166,8 @@ function money(m) {
         case 500:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn500v.gif";
             break;
+        case "j": //easteregg ;)
+            pic.src = "https://bestbuds.de/wp-content/uploads/2018/06/joint.jpg";
         default:
             break;
     }
