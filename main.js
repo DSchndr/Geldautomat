@@ -111,13 +111,28 @@ function hauptmenu() {
 }
 
 function money(m) {
-    pic.style.visibility = "visible";
+    pic.style.display = "block";
     switch(m){
         case 5:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
             break;
         case 10:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn10v.gif";
+            break;
+        case 20:
+            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn20v.gif";
+            break;
+        case 50:
+            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn50v.gif";
+            break;
+        case 100:
+            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn100v.gif";
+            break;
+        case 200:
+            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn200v.gif";
+            break;
+        case 500:
+            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn500v.gif";
             break;
         default:
             break;

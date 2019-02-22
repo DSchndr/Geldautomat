@@ -61,10 +61,10 @@
 
 
     <!-- Main Geldautomat div -->
-    <div id="geldautomat-main" style="padding-top: 60px">
+    <div id="geldautomat-main">
 
         <!-- *** ATM Area *** -->
-        <div id="display" class="jumbotron" style="padding-top: 10px; padding-bottom: 5px">
+        <div id="display" class="jumbotron">
             <h1 style="text-align: center">HarzIV-Bank</h1>
             <table>
                 <tr>
@@ -92,10 +92,10 @@
                                     <td style="display: block;"><button type="button" class="btn btn-danger" onclick="money(50)">50 Geld</button></td>
                                 </tr>
                                 <tr style="float: right;">
-                                    <td style="display: block;"><button style="float: right;" type="button" class="btn btn-danger" onclick="money(100)">100 Geld</button></td>
-                                    <td style="display: block;"><button style="float: right;" type="button" class="btn btn-danger" onclick="money(200)">200 Geld</button></td>
-                                    <td style="display: block;"><button style="float: right;" type="button" class="btn btn-danger" onclick="money(500)">500 Geld</button></td>
-                                    <td style="display: block;"><button style="float: right;" type="button" class="btn btn-danger" onclick="chosemoney()">Eigener Betrag</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright" onclick="money(100)">100 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright" onclick="money(200)">200 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright" onclick="money(500)">500 Geld</button></td>
+                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright" onclick="chosemoney()">Eigener Betrag</button></td>
                                 </tr>
                             </table>
                             <!-- $$$ -->
@@ -113,12 +113,12 @@
             </table>
         </div>
 
-        <div id="ausgabeschacht" style="width: 300px; min-height: 80px; max-height: 80px; border: 5px solid black; margin: auto; width:30%;">
-            <span><img id="pic" src="placeholder.png" style="visibility: none;"></span>
+        <div id="ausgabeschacht" style="width: 300px; min-height: 100px; max-height: 100px; border: 5px solid black; margin: auto; width:30%;">
+            <span><img id="pic" src="placeholder.png" class="centerimg" style="display: none;"></span>
         </div>
 
         <!-- *** Keypad *** -->
-        <div id="keypad" style="margin: auto; width:30%;">
+        <div id="keypad">
             <table class="table-bordered">
                 <tr class="keypad">
                     <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('1')">1</button></td>
