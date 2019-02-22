@@ -34,6 +34,8 @@ function insertcard() {
     pinmenu = true;
     title.innerText = "PIN-EINGABE";
     message.innerText ="Tipp: 1337";
+    pin.innerText = ""
+    PINstring = ""
     return;
 }
 
@@ -93,7 +95,9 @@ function buttonpress(Button) {
                 }
                 else {
                     //alert("Keine versuche mehr übrig.");
+                    pin.innerText = "Karte Gesperrt!"
                     message.innerText = "Keine versuche mehr übrig.";
+                    pinmenu = false;
                     return;
                 }
             }
