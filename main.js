@@ -33,7 +33,7 @@ function insertcard() {
     insertcardmenuv = false;
     pinmenu = true;
     title.innerText = "PIN-EINGABE";
-    message.innerText ="Tipp: 1337";
+    message.innerText = "Tipp: 1337";
     pin.innerText = ""
     PINstring = ""
     return;
@@ -132,7 +132,7 @@ function hauptmenu() {
 
 function money(m) {
     pic.style.display = "block";
-    switch(m){
+    switch (m) {
         case 5:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
             break;
@@ -160,4 +160,11 @@ function money(m) {
     title.innerText = "Geldausgabe";
     message.innerText = "Bitte entnehmen sie ihren Schein.";
     moneybuttons.style.display = "none";
+}
+
+// https://stackoverflow.com/questions/24861073/detect-if-any-kind-of-ie-msie/24861307
+function detectie(triggermessage = false) {
+    if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1) || triggermessage) {
+        alert("Internet Explorer veraltet. Bitte Firefox, Google Chrome oder Opera benutzen.");
+    }
 }
