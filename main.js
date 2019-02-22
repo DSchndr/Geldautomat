@@ -16,12 +16,21 @@ var PINTries = "2"; //2, da erster versuch schon der dritte ist ;)
 var PINstring = "";
 var clearonpress = false;
 
-var insertcardmenu = true;
+var insertcardmenuv = true;
 var pinmenu = false;
 var mainmenu = false;
 
+function insertcardmenu() {
+    title.innerText = "Bitte Karte reinstecken";
+    moneybuttons.style.display = "none";
+    pic.style.display = "none";
+    pinmenu = false;
+    insertcardmenuv = true;
+    mainmenu = false;
+}
+
 function insertcard() {
-    insertcardmenu = false;
+    insertcardmenuv = false;
     pinmenu = true;
     title.innerText = "PIN-EINGABE";
     message.innerText ="Tipp: 1337";
@@ -32,6 +41,12 @@ function insertcard() {
 
 function buttonpress(Button) {
     console.debug("BUTTON: " + Button);
+    if (mainmenu) {
+        if (Button == "a") {
+            insertcardmenu();
+            return;
+        }
+    }
     if (pinmenu) {
         // Wenn clearonpress wahr oder taste a gedrückt wurde -> PIN feld säubern
         if (clearonpress) {
@@ -108,6 +123,7 @@ function hauptmenu() {
     title.innerText = "Hauptmenü";
     message.innerText = "";
     moneybuttons.style.display = "table";
+    pic.style.display = "none";
 }
 
 function money(m) {
@@ -139,5 +155,5 @@ function money(m) {
     }
     title.innerText = "Geldausgabe";
     message.innerText = "Bitte entnehmen sie ihren Schein.";
-    moneybuttons.style.display = "none";    
+    moneybuttons.style.display = "none";
 }
