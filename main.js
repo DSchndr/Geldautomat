@@ -109,3 +109,20 @@ function hauptmenu() {
     message.innerText = "";
     moneybuttons.style.display = "table";
 }
+
+function money(m) {
+    pic.style.visibility = "visible";
+    switch(m){
+        case 5:
+            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
+            break;
+        case 10:
+            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn10v.gif";
+            break;
+        default:
+            break;
+    }
+    title.innerText = "Geldausgabe";
+    message.innerText = "Bitte entnehmen sie ihren Schein.";
+    moneybuttons.style.display = "none";    
+}
