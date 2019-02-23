@@ -130,7 +130,6 @@ function clearpindiv() {
 
 //setzt das hauptmenü in die seite rein.
 function hauptmenu() {
-    //alert("Pin richtig");
     pinmenu = false;
     mainmenu = true;
     clearpindiv();
@@ -142,6 +141,9 @@ function hauptmenu() {
 }
 
 function money(m) {
+    title.innerText = "Geldausgabe";
+    message.innerText = "Bitte entnehmen sie ihren Schein.";
+    moneybuttons.style.display = "none";
     pic.style.display = "block";
     ausgabeschacht.style.backgroundColor = "#ffffff";
     switch (m) {
@@ -171,9 +173,6 @@ function money(m) {
         default:
             break;
     }
-    title.innerText = "Geldausgabe";
-    message.innerText = "Bitte entnehmen sie ihren Schein.";
-    moneybuttons.style.display = "none";
 }
 
 // https://stackoverflow.com/questions/24861073/detect-if-any-kind-of-ie-msie/24861307
