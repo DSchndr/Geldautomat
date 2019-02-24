@@ -33,7 +33,7 @@ function insertcardmenu() {
 }
 
 function insertcard() {
-    alert("Insertcard called");
+    //alert("Insertcard called");
     insertcardmenuv = false;
     pinmenu = true;
     title.innerText = "PIN-EINGABE";
@@ -41,7 +41,7 @@ function insertcard() {
     //pin.innerText = "⠀" //Wir benutzen einen unicode "buchstaben" als platzhalter.
     PINstring = ""
     placeholder = true;
-    alert("Insertcard done");
+    //alert("Insertcard done");
     //return;
 }
 
