@@ -40,7 +40,7 @@ function insertcard() {
     pin.innerText = "⠀" //Wir benutzen einen unicode "buchstaben" als platzhalter.
     PINstring = ""
     placeholder = true;
-    return;
+    //return;
 }
 
 // Keypad handling functions
@@ -143,10 +143,11 @@ function hauptmenu() {
 function money(m) {
     title.innerText = "Geldausgabe";
     message.innerText = "Bitte entnehmen sie ihren Schein.";
-    moneybuttons.style.display = "none";
-    pic.style.display = "block";
-    ausgabeschacht.style.backgroundColor = "#ffffff";
-    switch (m) {
+    moneybuttons.style.display = "none"; //geldtasten unsichtbar
+    pic.style.display = "block"; //Bild sichtbar
+    ausgabeschacht.style.backgroundColor = "#ffffff"; //ausgabeschacht weiss färben
+    
+    switch (m) { //bild ersetzen
         case 5:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
             break;
