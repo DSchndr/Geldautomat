@@ -38,7 +38,7 @@ function insertcard() {
     pinmenu = true;
     title.innerText = "PIN-EINGABE";
     message.innerText = "Tipp: 1337";
-    //pin.innerText = "⠀" //Wir benutzen einen unicode "buchstaben" als platzhalter.
+    pin.innerText = "⠀" //Wir benutzen einen unicode "buchstaben" als platzhalter.
     PINstring = ""
     placeholder = true;
     //alert("Insertcard done");
