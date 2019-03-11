@@ -17,13 +17,13 @@
     <link rel="stylesheet" href="fontawesome/css/all.css" />
 
     <!-- *** JS *** -->
-    <script src="main.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="main.js" language="javascript" type="text/javascript"></script>
+    <script src="js/jquery-3.3.1.min.js" language="javascript" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" language="javascript" type="text/javascript"></script>
 </head>
 
 <body width="800" onload="detectie()">
-
+	<noscript><b>Bitte aktivieren sie Javascript!</b></noscript>
     <!-- *** Navigation Bar Start ***-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <!-- Brand -->
@@ -84,11 +84,11 @@
                                             Geld</button></td>
                                 </tr>
                                 <tr style="float: right;">
-                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright"
+                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright fixbottom"
                                             onclick="money(100)">100 Geld</button></td>
-                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright"
+                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright fixbottom"
                                             onclick="money(200)">200 Geld</button></td>
-                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright"
+                                    <td style="display: block;"><button type="button" class="btn btn-danger alignright fixbottom"
                                             onclick="money(500)">500 Geld</button></td>
                                     <!-- <td style="display: block;"><button type="button" class="btn btn-danger alignright" onclick="chosemoney()">Eigener Betrag</button></td> -->
                                 </tr>
@@ -110,8 +110,9 @@
             <span><img id="pic" src="placeholder.png" class="centerimg" style="display: none;" onclick="hauptmenu()"></span>
         </div>
 
-        <!-- *** Keypad *** -->
-        <div id="keypad">
+		<div class="d-flex justify-content-around">
+		<!-- *** Keypad *** -->
+        <div id="keypad" class="d-flex flex-column">
             <table class="table-bordered">
                 <tr class="keypad">
                     <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('1')">1</button></td>
@@ -142,6 +143,8 @@
         </div>
 
 
+		<div class="flex-column">2</div>
+		</div>
     </div>
 
 

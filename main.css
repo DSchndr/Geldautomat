@@ -1,4 +1,4 @@
-body {
+﻿body {
     width: 800px;
     margin: 0 auto;
  }
@@ -46,8 +46,8 @@ nav.navbar {
 }
 
 #keypad {
-    margin: auto;
-    width:30%;
+    /*margin: auto;*/
+    /*width:30%;*/
 }
 
 .centerimg {
@@ -57,3 +57,7 @@ nav.navbar {
     margin-right: auto;
     width: 65%;
   }
+  
+.fixbottom {
+	margin-bottom: 2px;
+}

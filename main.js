@@ -179,9 +179,9 @@ function money(m) {
 }
 
 // https://stackoverflow.com/questions/24861073/detect-if-any-kind-of-ie-msie/24861307
-function detectie(triggermessage = false) {
+function detectie(triggermessage) {
     if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1) || triggermessage) {
-        alert("Internet Explorer veraltet. Bitte Firefox, Google Chrome oder Opera benutzen.");
+        //alert("Internet Explorer veraltet. Bitte Firefox, Google Chrome oder Opera benutzen.");
     }
     return;
 }
