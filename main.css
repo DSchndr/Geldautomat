@@ -1,6 +1,7 @@
 ﻿body {
     width: 800px;
-    margin: 0 auto;
+    margin: auto;
+    transform: translateX(10%);
  }
 
 .keypad {
@@ -46,6 +47,7 @@ nav.navbar {
 }
 
 #keypad {
+	padding-top: 20px
     /*margin: auto;*/
     /*width:30%;*/
 }

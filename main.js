@@ -9,18 +9,27 @@ Todo:
 
 // Global Variables
 
-var PIN = "1337";
-var PINlength = "4";
-var PINTries = "2"; //2, da erster versuch schon der dritte ist ;)
-var PINstring = "";
-var clearonpress = false;
+var PIN = "1337"; // PIN f¸r den Bankautomaten
+var PINlength = "4"; //PINl‰nge
+var PINTries = "2"; //PINVersuche (2, da erster versuch schon der dritte ist ;)  )
 
+var PINstring = ""; //Platzhalter f¸r die pin die eingegeben wurde
+var clearonpress = false; //True -> div wird zur¸ckgesetzt bei tastendruck
+
+// Diverse platzhalter
 var insertcardmenuv = true;
 var pinmenu = false;
 var mainmenu = false;
 var placeholder = false;
 
+
+
+/*
+Insertcardmenu wird beim start aufgerufen und fordert den
+Nutzer auf eine Karte reinzustecken.
+*/
 function insertcardmenu() {
+	kartenschlitz.src = "bilder/kartenschlitz_karte_aussen.png";
     title.innerText = "Bitte Karte reinstecken";
     message.innerText = "";
     moneybuttons.style.display = "none";
@@ -32,8 +41,11 @@ function insertcardmenu() {
     return;
 }
 
+/*
+Insertcard wird aufgerufen wenn die Karte eingesetzt Wurde.
+*/
 function insertcard() {
-    //alert("Insertcard called");
+	kartenschlitz.src = "bilder/kartenschlitz_karte_drinnen.png";
     insertcardmenuv = false;
     pinmenu = true;
     title.innerText = "PIN-EINGABE";
@@ -41,24 +53,27 @@ function insertcard() {
     pin.innerText = "‚†Ä" //Wir benutzen einen unicode "buchstaben" als platzhalter.
     PINstring = ""
     placeholder = true;
-    //alert("Insertcard done");
-    //return;
+    return;
 }
 
-// Keypad handling functions
 
+// Keypad handling function
+/*
+buttonpress wird aufgerufen sobald eine Taste auf dem Tastenfeld
+gedr¸ckt wurde
+*/
 function buttonpress(Button) {
     //console.debug("BUTTON: " + Button);
 
-    if (mainmenu) {
+    if (mainmenu) { //Sind wir im hauptmen¸?
         if (Button == "a") {
-            insertcardmenu();
+            insertcardmenu(); //Abbrechen dr¸cken -> z¸r¸ck in das karte einsetzen men¸.
             return;
         }
     }
 
-    if (pinmenu) {
-        // Wenn clearonpress wahr oder taste a gedr√ºckt wurde -> PIN feld s√§ubern
+    if (pinmenu) { //Sind wir im pineigabemen¸?
+        // Wenn clearonpress wahr oder taste abbrechen gedr√ºckt wurde -> PIN feld s√§ubern
         if (clearonpress) {
             clearonpress = false;
             clearpindiv();
@@ -72,6 +87,7 @@ function buttonpress(Button) {
         // wenn abbrechen gedr√ºckt wurde
         if (Button == "a") {
             clearpindiv();
+            pin.innerText = "‚†Ä" //Wir benutzen einen unicode "buchstaben" als platzhalter.
             return;
         }
         // wenn Best√§tigen gedr√ºckt wurde
@@ -111,7 +127,7 @@ function buttonpress(Button) {
             }
         }
         //Sternchen in Pindiv einsetzen.
-        if (PINstring.length <= PINlength) {
+        if (PINstring.length <= PINlength) { //
             if (placeholder) {
                 placeholder = false;
                 pin.innerText = "";
@@ -130,6 +146,9 @@ function clearpindiv() {
     return;
 }
 
+/*
+hauptmenu macht die "Geld Tasten" sichtbar.
+*/
 //setzt das hauptmen√º in die seite rein.
 function hauptmenu() {
     pinmenu = false;
@@ -141,6 +160,11 @@ function hauptmenu() {
     pic.style.display = "none";
     ausgabeschacht.style.backgroundColor = "#3f3f3f";
 }
+
+/*
+money ‰ndert die hintergrundfarbe von dem div mit dem Bild und setzt das 
+zugehˆrige Bild ein.
+*/
 
 function money(m) {
     title.innerText = "Geldausgabe";
@@ -172,12 +196,18 @@ function money(m) {
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn500v.gif";
             break;
         case "j": //easteregg ;)
+            message.innerText = "Bitte entnehmen sie ihren 'Schein'.";
             pic.src = "https://bestbuds.de/wp-content/uploads/2018/06/joint.jpg";
         default:
             break;
     }
 }
 
+
+/*
+detectie wird beim laden der seite aufgerufen und fordert den nutzer auf
+einen anderen browser zu benutzen
+*/
 // https://stackoverflow.com/questions/24861073/detect-if-any-kind-of-ie-msie/24861307
 function detectie(triggermessage) {
     if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1) || triggermessage) {
