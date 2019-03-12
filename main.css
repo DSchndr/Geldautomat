@@ -1,7 +1,8 @@
 ﻿body {
     width: 800px;
     margin: auto;
-    transform: translateX(10%);
+    /* left: -50%; */
+    /* transform: translateX(40%); */
  }
 
 .keypad {
@@ -62,4 +63,29 @@ nav.navbar {
   
 .fixbottom {
 	margin-bottom: 2px;
+}
+
+#karte {
+    padding-left: 55px;
+    width: 130px;
+    /* height: 200px; */
+}
+
+.box-outer {
+    float: left;
+    width: 180px;
+    height: 40px;
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    background: #2bff00;
+}
+
+.box-inner {
+    margin-left: 23px;
+    margin-top: 15px;
+    width: 130px;
+    height: 10px;
+    /* margin: 5px; */
+    border: 1px solid rgba(0, 0, 0, .2);
+    background: #292929;
 }

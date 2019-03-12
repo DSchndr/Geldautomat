@@ -22,8 +22,8 @@
     <script src="js/bootstrap.min.js" language="javascript" type="text/javascript"></script>
 </head>
 
-<body width="800" onload="detectie()">
-	<noscript><b>Bitte aktivieren sie Javascript!</b></noscript>
+<body onload="detectie()">
+    <noscript><b>Bitte aktivieren sie Javascript!</b></noscript>
     <!-- *** Navigation Bar Start ***-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
         <!-- Brand -->
@@ -36,7 +36,8 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">PIN-Zähler zurücksetzen</a>
                     <a class="dropdown-item" href="#" onclick="insertcard()">Insert card</a>
-                    <a class="dropdown-item" href="#" onclick="pinmenu = true; insertcardmenuv = false;">Enable pin menu</a>
+                    <a class="dropdown-item" href="#" onclick="pinmenu = true; insertcardmenuv = false;">Enable pin
+                        menu</a>
                 </div>
             </li>
             <!-- Entwickler Dropdown -->
@@ -61,9 +62,13 @@
 
         <!-- *** ATM Area *** -->
         <div id="display" class="jumbotron">
-            <!-- <h1 style="text-align: center">HarzIV-Bank</h1> -->
-            <div id="imagewrapper" style="width: 100px; height: 100px; margin: auto;"><img src="logo.png" style="width: 100px; height: 100px;"></div>
-            <table>
+            <!-- <h1 style="text-align: center">Falschgeldautomat</h1> -->
+            
+            <div style="background: #fdf5a7; padding: 5px; margin-bottom: 5px;">
+                    <h2 style="text-align: center"><div id="imagewrapper" style="width: 100px; height: 100px; margin: auto; vertical-align: baseline; display: inline;"><img src="logo.png" style="width: 100px; height: 100px;"></div> Falschgeldautomat</h2>
+            </div>
+
+            <table style="clear: both;">
                 <tr>
                     <td id="geldautomat-screen" style="padding-left: 35px">
                         <div style="width: 670px; min-height: 250px; max-height: 250px; border: 5px solid red;">
@@ -103,51 +108,52 @@
                     </td>
                 </tr>
             </table>
-            
-        <!-- *** Ausgabeschacht *** -->
-        <div id="ausgabeschacht">
-            <span><img id="pic" src="placeholder.png" class="centerimg" style="display: none;" onclick="hauptmenu()"></span>
+
+            <!-- *** Ausgabeschacht *** -->
+            <div id="ausgabeschacht">
+                <span><img id="pic" src="placeholder.png" class="centerimg" style="display: none;" onclick="hauptmenu()"></span>
+            </div>
+
         </div>
-        
-        </div>
-		<div class="d-flex justify-content-around">
-		<!-- *** Keypad *** -->
-        <div id="keypad" class="d-flex flex-column">
-            <table class="table-bordered">
-                <tr class="keypad">
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('1')">1</button></td>
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('2')">2</button></td>
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('3')">3</button></td>
-                    <td><button type="button" class="btn btn-danger" onclick="buttonpress('a')">Abbruch</button></td>
-                </tr>
-                <tr class="keypad">
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('4')">4</button></td>
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('5')">5</button></td>
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('6')">6</button></td>
-                    <td><button type="button" class="btn btn-warning" onclick="buttonpress('k')">Korrektur</button></td>
-                </tr>
-                <tr class="keypad">
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('7')">7</button></td>
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('8')">8</button></td>
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('9')">9</button></td>
-                    <td><button type="button" class="btn btn-light" onclick="buttonpress('h')">Hilfe</button></td>
-                </tr>
-                <tr class="keypad">
-                    <td></td>
-                    <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('0')">0</button></td>
-                    <td></td>
-                    <td><button type="button" class="btn btn-success" onclick="buttonpress('b')">Bestätigung</button></td>
-                </tr>
-            </table>
-            <button type="button" class="btn btn-danger" onclick="insertcard()">Karte einsetzen</button>
-        </div>
+        <div class="d-flex justify-content-around">
+            <!-- *** Keypad *** -->
+            <div id="keypad" class="d-flex flex-column">
+                <table class="table-bordered">
+                    <tr class="keypad">
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('1')">1</button></td>
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('2')">2</button></td>
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('3')">3</button></td>
+                        <td><button type="button" class="btn btn-danger" onclick="buttonpress('a')">Abbruch</button></td>
+                    </tr>
+                    <tr class="keypad">
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('4')">4</button></td>
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('5')">5</button></td>
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('6')">6</button></td>
+                        <td><button type="button" class="btn btn-warning" onclick="buttonpress('k')">Korrektur</button></td>
+                    </tr>
+                    <tr class="keypad">
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('7')">7</button></td>
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('8')">8</button></td>
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('9')">9</button></td>
+                        <td><button type="button" class="btn btn-light" onclick="buttonpress('h')">Hilfe</button></td>
+                    </tr>
+                    <tr class="keypad">
+                        <td></td>
+                        <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('0')">0</button></td>
+                        <td></td>
+                        <td><button type="button" class="btn btn-success" onclick="buttonpress('b')">Bestätigung</button></td>
+                    </tr>
+                </table>
+                <!-- <button type="button" class="btn btn-danger" onclick="insertcard()">Karte einsetzen</button> -->
+            </div>
 
 
-		<div class="flex-column">
-		 <div><img src="bilder/kartenschlitz_karte_aussen.png" id="kartenschlitz" ></div>
-		
-		</div>
-		</div>
+            <div class="flex-column">
+                <div class="box-outer"><div class="box-inner"></div></div>
+                <div><img src="bilder/Karte.png" id="karte" onclick="insertcard()"></div>
+
+            </div>
+        </div>
     </div>
 
 

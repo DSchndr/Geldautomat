@@ -9,12 +9,12 @@ Todo:
 
 // Global Variables
 
-var PIN = "1337"; // PIN für den Bankautomaten
-var PINlength = "4"; //PINlänge
+var PIN = "1337"; // PIN fï¿½r den Bankautomaten
+var PINlength = "4"; //Maximale PINlï¿½nge (5)
 var PINTries = "2"; //PINVersuche (2, da erster versuch schon der dritte ist ;)  )
 
-var PINstring = ""; //Platzhalter für die pin die eingegeben wurde
-var clearonpress = false; //True -> div wird zurückgesetzt bei tastendruck
+var PINstring = ""; //Platzhalter fï¿½r die pin die eingegeben wurde
+var clearonpress = false; //True -> div wird zurï¿½ckgesetzt bei tastendruck
 
 // Diverse platzhalter
 var insertcardmenuv = true;
@@ -25,11 +25,12 @@ var placeholder = false;
 
 
 /*
-Insertcardmenu wird beim start aufgerufen und fordert den
-Nutzer auf eine Karte reinzustecken.
+    Insertcardmenu wird beim start aufgerufen und fordert den
+    Nutzer auf eine Karte reinzustecken.
 */
 function insertcardmenu() {
-	kartenschlitz.src = "bilder/kartenschlitz_karte_aussen.png";
+    karte.src = "bilder/Karte.png";
+    karte.style.marginTop = "0px";
     title.innerText = "Bitte Karte reinstecken";
     message.innerText = "";
     moneybuttons.style.display = "none";
@@ -42,12 +43,18 @@ function insertcardmenu() {
 }
 
 /*
-Insertcard wird aufgerufen wenn die Karte eingesetzt Wurde.
+    Insertcard wird aufgerufen wenn die Karte eingesetzt wird.
 */
 function insertcard() {
-	kartenschlitz.src = "bilder/kartenschlitz_karte_drinnen.png";
+    if (mainmenu || pinmenu) {
+        return;
+    }
+    karte.src = "bilder/Karte_half.png";
+    karte.style.marginTop = "-25px";
     insertcardmenuv = false;
     pinmenu = true;
+    mainmenu = false;
+    moneybuttons.style.display = "none"; //geldtasten unsichtbar
     title.innerText = "PIN-EINGABE";
     message.innerText = "Tipp: 1337";
     pin.innerText = "â €" //Wir benutzen einen unicode "buchstaben" als platzhalter.
@@ -59,35 +66,39 @@ function insertcard() {
 
 // Keypad handling function
 /*
-buttonpress wird aufgerufen sobald eine Taste auf dem Tastenfeld
-gedrückt wurde
+    buttonpress wird aufgerufen sobald eine Taste auf dem Tastenfeld
+    gedrï¿½ckt wurde
 */
 function buttonpress(Button) {
     //console.debug("BUTTON: " + Button);
+    if (Button == "h") {
+        window.location = "http://www.google.com/search?q=wie+funktioniert+ein+geldautomat";
+        // return;
+    }
 
-    if (mainmenu) { //Sind wir im hauptmenü?
+
+    if (mainmenu) { //Sind wir im hauptmenï¿½?
         if (Button == "a") {
-            insertcardmenu(); //Abbrechen drücken -> zürück in das karte einsetzen menü.
+            insertcardmenu(); //Abbrechen drï¿½cken -> zï¿½rï¿½ck in das karte einsetzen menï¿½.
             return;
         }
     }
 
-    if (pinmenu) { //Sind wir im pineigabemenü?
+    if (pinmenu) { //Sind wir im pineigabemenï¿½?
         // Wenn clearonpress wahr oder taste abbrechen gedrÃ¼ckt wurde -> PIN feld sÃ¤ubern
         if (clearonpress) {
             clearonpress = false;
             clearpindiv();
         }
-
-        // korrektur und hilfe buttons werden nicht benutzt
-        if ((Button == "k") | (Button == "h")) {
+        if (Button == "k") {
+            clearpindiv();
+            pin.innerText = "â €" //Wir benutzen einen unicode "buchstaben" als platzhalter.
             return;
         }
 
         // wenn abbrechen gedrÃ¼ckt wurde
         if (Button == "a") {
-            clearpindiv();
-            pin.innerText = "â €" //Wir benutzen einen unicode "buchstaben" als platzhalter.
+            insertcardmenu();
             return;
         }
         // wenn BestÃ¤tigen gedrÃ¼ckt wurde
@@ -111,13 +122,13 @@ function buttonpress(Button) {
             }
             //pin falsch
             else {
-                if (PINTries >= "1") {
+                if (PINTries >= "1") { // Versuche noch verfÃ¼gbar
                     message.innerText = "PIN Falsch! " + PINTries + " versuche Ã¼brig.";
                     PINTries = PINTries - 1;
                     clearonpress = true;
                     return;
-                }
-                else {
+                } 
+                else { // Keine versuche mehr fÃ¼r den nutzer -> Karte gesperrt.
                     //alert("Keine versuche mehr Ã¼brig.");
                     pin.innerText = "Karte Gesperrt!"
                     message.innerText = "Keine versuche mehr Ã¼brig.";
@@ -127,7 +138,7 @@ function buttonpress(Button) {
             }
         }
         //Sternchen in Pindiv einsetzen.
-        if (PINstring.length <= PINlength) { //
+        if (PINstring.length <= PINlength) { //pinlÃ¤nge auf 5 beschrÃ¤nken
             if (placeholder) {
                 placeholder = false;
                 pin.innerText = "";
@@ -147,7 +158,7 @@ function clearpindiv() {
 }
 
 /*
-hauptmenu macht die "Geld Tasten" sichtbar.
+    hauptmenu macht die "Geld Tasten" sichtbar.
 */
 //setzt das hauptmenÃ¼ in die seite rein.
 function hauptmenu() {
@@ -162,8 +173,8 @@ function hauptmenu() {
 }
 
 /*
-money ändert die hintergrundfarbe von dem div mit dem Bild und setzt das 
-zugehörige Bild ein.
+    money ï¿½ndert die hintergrundfarbe von dem div mit dem Bild und setzt das 
+    zugehï¿½rige Bild ein.
 */
 
 function money(m) {
@@ -196,7 +207,7 @@ function money(m) {
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn500v.gif";
             break;
         case "j": //easteregg ;)
-            message.innerText = "Bitte entnehmen sie ihren 'Schein'.";
+            message.innerText = "Bitte entnehmen sie ihren 'Schein' ;) ";
             pic.src = "https://bestbuds.de/wp-content/uploads/2018/06/joint.jpg";
         default:
             break;
@@ -205,8 +216,8 @@ function money(m) {
 
 
 /*
-detectie wird beim laden der seite aufgerufen und fordert den nutzer auf
-einen anderen browser zu benutzen
+    detectie wird beim laden der seite aufgerufen und fordert den nutzer auf
+    einen anderen browser zu benutzen
 */
 // https://stackoverflow.com/questions/24861073/detect-if-any-kind-of-ie-msie/24861307
 function detectie(triggermessage) {
