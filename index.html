@@ -36,9 +36,11 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">PIN-Zähler zurücksetzen</a>
                     <a class="dropdown-item" href="#" onclick="insertcard()">Insert card</a>
-                    <a class="dropdown-item" href="#" onclick="pinmenu = true; insertcardmenuv = false;">Enable pin
-                        menu</a>
-                </div>
+  					<form class="form-inline">
+    					<input class="form-control" type="search" placeholder="Money" aria-label="Money" id="overridevalue">
+    					<button class="btn btn-outline-success centerbutton" type="button" onclick="overridemoney()">Override</button>
+  					</form>
+  				</div>
             </li>
             <!-- Entwickler Dropdown -->
             <li class="nav-item dropdown">
@@ -62,8 +64,6 @@
 
         <!-- *** ATM Area *** -->
         <div id="display" class="jumbotron">
-            <!-- <h1 style="text-align: center">Falschgeldautomat</h1> -->
-            
             <div style="background: #fdf5a7; padding: 5px; margin-bottom: 5px;">
                     <h2 style="text-align: center"><div id="imagewrapper" style="width: 100px; height: 100px; margin: auto; vertical-align: baseline; display: inline;"><img src="logo.png" style="width: 100px; height: 100px;"></div> Falschgeldautomat</h2>
             </div>
