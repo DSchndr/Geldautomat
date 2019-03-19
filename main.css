@@ -89,8 +89,8 @@ nav.navbar {
 }
 
 #imagewrapper {
-    width: 100px; 
-    height: 100px; 
+    /* width: 100px;  */
+    /* height: 100px;  */
     margin: auto; 
     vertical-align: baseline; 
     display: inline;
