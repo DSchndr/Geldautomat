@@ -22,6 +22,15 @@ var pinmenu = false;
 var mainmenu = false;
 var placeholder = false;
 
+var moneyv = 1000;
+
+function overridemoney() {
+	if (overridemoney.innerText == null) {
+		alert("Wert darf nicht leer sein!");
+		return;
+	}
+	moneyv = overridemoney.innerText;
+}
 
 
 /*
@@ -29,6 +38,7 @@ var placeholder = false;
     Nutzer auf eine Karte reinzustecken.
 */
 function insertcardmenu() {
+    message.style.fontSize = "2rem";
     karte.src = "bilder/Karte.png";
     karte.style.marginTop = "0px";
     title.innerText = "Bitte Karte reinstecken";
@@ -166,7 +176,9 @@ function hauptmenu() {
     mainmenu = true;
     clearpindiv();
     title.innerText = "Hauptmenü";
-    message.innerText = "";
+    //message.innerText = "";
+    message.innerText = "Ihr Kontostand: " + moneyv + " geld";
+    message.style.fontSize = "1rem";
     moneybuttons.style.display = "table";
     pic.style.display = "none";
     ausgabeschacht.style.backgroundColor = "#3f3f3f";
@@ -187,31 +199,41 @@ function money(m) {
     switch (m) { //bild ersetzen
         case 5:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
+            moneyv = moneyv - 5;
             break;
         case 10:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn10v.gif";
+            moneyv = moneyv - 10;
             break;
         case 20:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn20v.gif";
+            moneyv = moneyv - 20;
             break;
         case 50:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn50v.gif";
+            moneyv = moneyv - 50;
             break;
         case 100:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn100v.gif";
+            moneyv = moneyv - 100;
             break;
         case 200:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn200v.gif";
+            moneyv = moneyv - 200;
             break;
         case 500:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn500v.gif";
+            moneyv = moneyv - 500;
             break;
         case "j": //easteregg ;)
             message.innerText = "Bitte entnehmen sie ihren 'Schein' ;) ";
             pic.src = "https://bestbuds.de/wp-content/uploads/2018/06/joint.jpg";
+            moneyv = 420;
         default:
             break;
     }
+    message.innerText = "Ihr Kontostand: " + moneyv + " geld";
+    message.style.fontSize = "2rem";
 }
 
 

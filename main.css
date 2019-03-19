@@ -127,3 +127,7 @@ nav.navbar {
     -ms-flex-align: center;
         align-items: center;
 }
+
+.centerbutton {
+	margin: auto;
+}
