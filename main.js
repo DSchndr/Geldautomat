@@ -10,7 +10,7 @@ Todo:
 // Global Variables
 
 var PIN = "1337"; // PIN f�r den Bankautomaten
-var PINlength = "4"; //Maximale PINl�nge (5)
+//var PINlength = "4"; //Maximale PINl�nge (5)
 var PINTries = "2"; //PINVersuche (2, da erster versuch schon der dritte ist ;)  )
 
 var PINstring = ""; //Platzhalter f�r die pin die eingegeben wurde
@@ -24,12 +24,22 @@ var placeholder = false;
 
 var moneyv = 1000;
 
-function overridemoney() {
-	if (overridemoney.innerText == null) {
+function overridepin() {
+	if (pinovvalue.value == null) {
 		alert("Wert darf nicht leer sein!");
 		return;
 	}
-	moneyv = overridemoney.innerText;
+	PIN = pinovvalue.value;
+    insertcardmenu();
+}
+
+function overridemoney() {
+	if (overridevalue.value == null) {
+		alert("Wert darf nicht leer sein!");
+		return;
+	}
+    moneyv = overridevalue.value;
+    insertcardmenu();
 }
 
 
@@ -74,7 +84,7 @@ function insertcard() {
 }
 
 
-// Keypad handling function
+// Keypad handler
 /*
     buttonpress wird aufgerufen sobald eine Taste auf dem Tastenfeld
     gedr�ckt wurde
@@ -95,6 +105,7 @@ function buttonpress(Button) {
     }
 
     if (pinmenu) { //Sind wir im pineigabemen�?
+        PINlength = PIN.length; //Pinlänge berechen
         // Wenn clearonpress wahr oder taste abbrechen gedrückt wurde -> PIN feld säubern
         if (clearonpress) {
             clearonpress = false;
@@ -148,7 +159,7 @@ function buttonpress(Button) {
             }
         }
         //Sternchen in Pindiv einsetzen.
-        if (PINstring.length <= PINlength) { //pinlänge auf 5 beschränken
+        if (PINstring.length <= PINlength) { //pinlänge pin + 1  beschränken
             if (placeholder) {
                 placeholder = false;
                 pin.innerText = "";

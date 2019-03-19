@@ -35,12 +35,23 @@
                     Einstellungen</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">PIN-Zähler zurücksetzen</a>
-                    <a class="dropdown-item" href="#" onclick="insertcard()">Insert card</a>
-  					<form class="form-inline">
-    					<input class="form-control" type="search" placeholder="Money" aria-label="Money" id="overridevalue">
-    					<button class="btn btn-outline-success centerbutton" type="button" onclick="overridemoney()">Override</button>
-  					</form>
-  				</div>
+                    <!-- <a class="dropdown-item" href="#" onclick="insertcard()">Insert card</a> -->
+                    <a class="dropdown-divider"></a>
+                    <div class="dropdown-item sp">
+                        <p>Kontostand überschreiben</p>
+                        <input class="form-control" style="width: 50%; display: inline;" type="search" placeholder="Money"
+                            aria-label="Money" id="overridevalue">
+                        <button class="btn btn-outline-success centerbutton" style="position:relative" type="button"
+                            onclick="overridemoney()">Override</button>
+                    </div>
+                    <div class="dropdown-item sp">
+                        <p>PIN ändern</p>
+                        <input class="form-control" style="width: 50%; display: inline;" type="search" placeholder="Money"
+                            aria-label="Money" id="pinovvalue">
+                        <button class="btn btn-outline-success centerbutton" style="position:relative" type="button"
+                            onclick="overridepin()">Override</button>
+                    </div>
+                </div>
             </li>
             <!-- Entwickler Dropdown -->
             <li class="nav-item dropdown">
@@ -62,19 +73,12 @@
     <!-- Main Geldautomat div -->
     <div id="geldautomat-main">
 
-<<<<<<< HEAD
         <div style="background-color: #808080; width: 100%; height: 200px; overflow: auto;">
             <div style="background: #fdf5a7; padding: 5px; margin-top: 40px; max-width: 600px; max-height: 130px; margin-left: 100px">
                 <h2 style="text-align: center">
                     <div id="imagewrapper" style="width: 100px; height: 100px; margin: auto; vertical-align: baseline; display: inline;"><img
                             src="logo.png" style="width: 100px; height: 100px;"></div> Falschgeldautomat
                 </h2>
-=======
-        <!-- *** ATM Area *** -->
-        <div id="display" class="jumbotron">
-            <div style="background: #fdf5a7; padding: 5px; margin-bottom: 5px;">
-                    <h2 style="text-align: center"><div id="imagewrapper" style="width: 100px; height: 100px; margin: auto; vertical-align: baseline; display: inline;"><img src="logo.png" style="width: 100px; height: 100px;"></div> Falschgeldautomat</h2>
->>>>>>> d9e0ac48bb6419e85b9ef59b2554611cf7fcac2c
             </div>
         </div>
 
@@ -83,7 +87,7 @@
             <table style="clear: both;">
                 <tr>
                     <td id="geldautomat-screen" style="padding-left: 35px">
-                        <div style="width: 670px; min-height: 250px; max-height: 250px; border: 5px solid red;">
+                        <div style="width: 670px; min-height: 250px; max-height: 250px; border: 5px solid gainsboro;">
                             <h3 style="text-align: center" id="title">Bitte Karte reinstecken</h3>
                             <h1 style="text-align: center; font-weight:bolder; font-size: 60pt" id="pin"></h1>
                             <h2 style="text-align: center;" id="message"></h2>
@@ -121,6 +125,11 @@
                 </tr>
             </table>
 
+            <br>
+
+            <div style="background-color: #3f3f3f; text-align: center; height: 33px; width: 220px; margin: auto; ">
+                    <p id="cardinserttext"><i class="fa fa-money-bill-alt"></i> Ausgabeschacht</p>
+            </div>
             <!-- *** Ausgabeschacht *** -->
             <div id="ausgabeschacht">
                 <span><img id="pic" src="placeholder.png" class="centerimg" style="display: none;" onclick="hauptmenu()"></span>
@@ -131,39 +140,44 @@
             <!-- *** Keypad *** -->
             <div id="keypad" class="d-flex flex-column">
                 <table class="table-bordered" style="background-color: white">
+                    <tr>
+                        <td colspan="4" style="background-color: #3f3f3f; text-align: center; height: 33px">
+                            <p id="cardinserttext"><i class="fa fa-keyboard"></i> Tastenfeld</p>
+                        </td>
+                    </tr>
                     <tr class="keypad">
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('1')">1</button></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('2')">2</button></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('3')">3</button></td>
-                        <td><button type="button" class="btn btn-danger" onclick="buttonpress('a')">Abbruch</button></td>
+                        <td><button type="button" class="btn btn-danger full" onclick="buttonpress('a')">Abbruch</button></td>
                     </tr>
                     <tr class="keypad">
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('4')">4</button></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('5')">5</button></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('6')">6</button></td>
-                        <td><button type="button" class="btn btn-warning" onclick="buttonpress('k')">Korrektur</button></td>
+                        <td><button type="button" class="btn btn-warning full" onclick="buttonpress('k')">Korrektur</button></td>
                     </tr>
                     <tr class="keypad">
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('7')">7</button></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('8')">8</button></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('9')">9</button></td>
-                        <td><button type="button" class="btn btn-light" onclick="buttonpress('h')">Hilfe</button></td>
+                        <td><button type="button" class="btn btn-light full" onclick="buttonpress('h')">Hilfe</button></td>
                     </tr>
                     <tr class="keypad">
                         <td></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('0')">0</button></td>
                         <td></td>
-                        <td><button type="button" class="btn btn-success" onclick="buttonpress('b')">Bestätigung</button></td>
+                        <td><button type="button" class="btn btn-success full" onclick="buttonpress('b')">Bestätigung</button></td>
                     </tr>
                 </table>
                 <!-- <button type="button" class="btn btn-danger" onclick="insertcard()">Karte einsetzen</button> -->
             </div>
 
 
-            <div class="flex-column flexboxfix">
+            <div class="flex-column flexboxfix" style="padding-top: 17px">
                 <div class="box-outer-2">
                     <p id="cardinserttext"><i class="fa fa-credit-card"></i>
-                        KARTE</p>
+                        Karte</p>
                     <div class="box-outer">
                         <div class="box-inner"></div>
                     </div>
