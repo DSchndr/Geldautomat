@@ -60,14 +60,17 @@
     <!-- Main Geldautomat div -->
     <div id="geldautomat-main">
 
+        <div style="background-color: #808080; width: 100%; height: 200px; overflow: auto;">
+            <div style="background: #fdf5a7; padding: 5px; margin-top: 40px; max-width: 600px; max-height: 130px; margin-left: 100px">
+                <h2 style="text-align: center">
+                    <div id="imagewrapper" style="width: 100px; height: 100px; margin: auto; vertical-align: baseline; display: inline;"><img
+                            src="logo.png" style="width: 100px; height: 100px;"></div> Falschgeldautomat
+                </h2>
+            </div>
+        </div>
+
         <!-- *** ATM Area *** -->
         <div id="display" class="jumbotron">
-            <!-- <h1 style="text-align: center">Falschgeldautomat</h1> -->
-            
-            <div style="background: #fdf5a7; padding: 5px; margin-bottom: 5px;">
-                    <h2 style="text-align: center"><div id="imagewrapper" style="width: 100px; height: 100px; margin: auto; vertical-align: baseline; display: inline;"><img src="logo.png" style="width: 100px; height: 100px;"></div> Falschgeldautomat</h2>
-            </div>
-
             <table style="clear: both;">
                 <tr>
                     <td id="geldautomat-screen" style="padding-left: 35px">
@@ -115,10 +118,10 @@
             </div>
 
         </div>
-        <div class="d-flex justify-content-around">
+        <div class="d-flex justify-content-around" style="background-color: #cccccc">
             <!-- *** Keypad *** -->
             <div id="keypad" class="d-flex flex-column">
-                <table class="table-bordered">
+                <table class="table-bordered" style="background-color: white">
                     <tr class="keypad">
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('1')">1</button></td>
                         <td><button type="button" class="btn btn-outline-dark" onclick="buttonpress('2')">2</button></td>
@@ -149,7 +152,13 @@
 
 
             <div class="flex-column flexboxfix">
-                <div class="box-outer"><div class="box-inner"></div></div>
+                <div class="box-outer-2">
+                    <p id="cardinserttext"><i class="fa fa-credit-card"></i>
+                        KARTE</p>
+                    <div class="box-outer">
+                        <div class="box-inner"></div>
+                    </div>
+                </div>
                 <div><img src="bilder/Karte.png" id="karte" onclick="insertcard()"></div>
 
             </div>
