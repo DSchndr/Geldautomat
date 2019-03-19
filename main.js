@@ -188,7 +188,7 @@ function hauptmenu() {
     clearpindiv();
     title.innerText = "Hauptmenü";
     //message.innerText = "";
-    message.innerText = "Ihr Kontostand: " + moneyv + " geld";
+    message.innerText = "Ihr Kontostand: " + moneyv + "€";
     message.style.fontSize = "1rem";
     moneybuttons.style.display = "table";
     pic.style.display = "none";
@@ -206,35 +206,28 @@ function money(m) {
     moneybuttons.style.display = "none"; //geldtasten unsichtbar
     pic.style.display = "block"; //Bild sichtbar
     ausgabeschacht.style.backgroundColor = "#ffffff"; //ausgabeschacht weiss färben
-    
+    moneyv = moneyv - m;
     switch (m) { //bild ersetzen
         case 5:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
-            moneyv = moneyv - 5;
             break;
         case 10:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn10v.gif";
-            moneyv = moneyv - 10;
             break;
         case 20:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn20v.gif";
-            moneyv = moneyv - 20;
             break;
         case 50:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn50v.gif";
-            moneyv = moneyv - 50;
             break;
         case 100:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn100v.gif";
-            moneyv = moneyv - 100;
             break;
         case 200:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn200v.gif";
-            moneyv = moneyv - 200;
             break;
         case 500:
             pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn500v.gif";
-            moneyv = moneyv - 500;
             break;
         case "j": //easteregg ;)
             message.innerText = "Bitte entnehmen sie ihren 'Schein' ;) ";
@@ -243,7 +236,7 @@ function money(m) {
         default:
             break;
     }
-    message.innerText = "Ihr Kontostand: " + moneyv + " geld";
+    message.innerText = "Ihr Kontostand: " + moneyv + "€";
     message.style.fontSize = "2rem";
 }
 
