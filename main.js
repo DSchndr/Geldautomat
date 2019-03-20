@@ -206,32 +206,32 @@ function money(m) {
     moneybuttons.style.display = "none"; //geldtasten unsichtbar
     pic.style.display = "block"; //Bild sichtbar
     ausgabeschacht.style.backgroundColor = "#ffffff"; //ausgabeschacht weiss färben
-    moneyv = moneyv - m;
+    moneyv = moneyv - m; // Betrag von kontostand abziehen
     switch (m) { //bild ersetzen
         case 5:
-            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn5v.gif";
+            pic.src = "bilder/geld/5.gif";
             break;
         case 10:
-            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn10v.gif";
+            pic.src = "bilder/geld/10.gif";
             break;
         case 20:
-            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn20v.gif";
+            pic.src = "bilder/geld/20.gif";
             break;
         case 50:
-            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn50v.gif";
+            pic.src = "bilder/geld/50.gif";
             break;
         case 100:
-            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn100v.gif";
+            pic.src = "bilder/geld/100.gif";
             break;
         case 200:
-            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn200v.gif";
+            pic.src = "bilder/geld/200.gif";
             break;
         case 500:
-            pic.src = "http://www.erft.de/schulen/rendsburger/wl/bn500v.gif";
+            pic.src = "bilder/geld/500.gif";
             break;
         case "j": //easteregg ;)
             message.innerText = "Bitte entnehmen sie ihren 'Schein' ;) ";
-            pic.src = "https://bestbuds.de/wp-content/uploads/2018/06/joint.jpg";
+            pic.src = "http://dschndr.ddns.net/images/easteregg.png";
             moneyv = 420;
         default:
             break;
