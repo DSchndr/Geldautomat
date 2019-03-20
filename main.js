@@ -2,8 +2,7 @@
 
 /* 
 Todo:
-- Korrekturbutton
-- Hilfebutton
+
 */
 
 
@@ -23,6 +22,8 @@ var mainmenu = false;
 var placeholder = false;
 
 var moneyv = 1000;
+
+// Code
 
 function overridepin() {
 	if (pinovvalue.value == null) {
@@ -231,9 +232,9 @@ function money(m) {
             break;
         case "j": //easteregg ;)
             //message.innerText = "Bitte entnehmen sie ihren 'Schein' ;) ";
+            // moneyv = 420;
             pic.src = "http://dschndr.ddns.net/images/easteregg.jpg";
             geldautomat_screen.innerHTML = "<video style='width: 100%; height: 100%;' loop='' autoplay=''><source src='http://dschndr.ddns.net/images/ramzi.mp4' type='video/mp4'></video>"
-            moneyv = 420;
         default:
             break;
     }
@@ -243,13 +244,13 @@ function money(m) {
 
 
 /*
-    detectie wird beim laden der seite aufgerufen und fordert den nutzer auf
-    einen anderen browser zu benutzen
+    detectie wird beim laden der seite aufgerufen ~und fordert den nutzer auf
+    einen anderen browser zu benutzen~
 */
 // https://stackoverflow.com/questions/24861073/detect-if-any-kind-of-ie-msie/24861307
 function detectie(triggermessage) {
     if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv:11/)) || (typeof $.browser !== "undefined" && $.browser.msie == 1) || triggermessage) {
-        //alert("Internet Explorer veraltet. Bitte Firefox, Google Chrome oder Opera benutzen.");
+        //alert("Internet Explorer erkannt. Bitte Firefox, Google Chrome oder Opera benutzen.");
     }
     return;
 }
