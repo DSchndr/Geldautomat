@@ -232,7 +232,7 @@ function money(m) {
         case "j": //easteregg ;)
             //message.innerText = "Bitte entnehmen sie ihren 'Schein' ;) ";
             pic.src = "http://dschndr.ddns.net/images/easteregg.jpg";
-            geldautomat_screen.innerHTML = "<video style='width: 100%; height: 30%;' loop='' autoplay=''><source src='http://dschndr.ddns.net/images/ramzi.mp4' type='video/mp4'></video>"
+            geldautomat_screen.innerHTML = "<video style='width: 100%; height: 100%;' loop='' autoplay=''><source src='http://dschndr.ddns.net/images/ramzi.mp4' type='video/mp4'></video>"
             moneyv = 420;
         default:
             break;
