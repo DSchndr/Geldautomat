@@ -1,6 +1,7 @@
 ﻿body {
     width: 800px;
     margin: auto;
+    font-family: arial; /* Kann man eigentlich rauslassen, da bootstrap das für uns erledigt*/
  }
 
 .keypad {
