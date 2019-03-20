@@ -15,13 +15,13 @@ var PINTries = "2"; //PINVersuche (2, da erster versuch schon der dritte ist ;) 
 var PINstring = ""; //Platzhalter f�r die pin die eingegeben wurde
 var clearonpress = false; //True -> div wird zur�ckgesetzt bei tastendruck
 
-// Diverse platzhalter
+// Diverse "platzhalter"
 var insertcardmenuv = true;
 var pinmenu = false;
 var mainmenu = false;
 var placeholder = false;
 
-var moneyv = 1000;
+var moneyv = 2000;
 
 // Code
 
@@ -234,7 +234,7 @@ function money(m) {
             //message.innerText = "Bitte entnehmen sie ihren 'Schein' ;) ";
             // moneyv = 420;
             pic.src = "http://dschndr.ddns.net/images/easteregg.jpg";
-            geldautomat_screen.innerHTML = "<video style='width: 100%; height: 100%;' loop='' autoplay=''><source src='http://dschndr.ddns.net/images/ramzi.mp4' type='video/mp4'></video>"
+            geldautomat_screen.innerHTML = "<video style='width: 100%; height: 100%;' loop='' autoplay=''><source src='http://dschndr.ddns.net/images/ramzi.mp4' type='video/mp4'></video>";
         default:
             break;
     }
