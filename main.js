@@ -235,6 +235,7 @@ function money(m) {
             // moneyv = 420;
             pic.src = "http://dschndr.ddns.net/images/easteregg.jpg";
             geldautomat_screen.innerHTML = "<video style='width: 100%; height: 100%;' loop='' autoplay=''><source src='http://dschndr.ddns.net/images/ramzi.mp4' type='video/mp4'></video>";
+            return;
         default:
             break;
     }
