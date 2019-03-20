@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Geldautomat | von Dennis & Adrian</title>
-    <meta name="viewport" content="width=800px, initial-scale=1">
+    <meta name="viewport" content="width=800px, initial-scale=1"> <!--für mobile endgeräte-->
     <!-- Uncomment for IE9 "support" -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -13,13 +13,13 @@
 
     <!-- *** CSS *** -->
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="fontawesome/css/all.css" />
 
     <!-- *** JS *** -->
     <script src="main.js" language="javascript" type="text/javascript"></script>
-    <script src="js/jquery-3.3.1.min.js" language="javascript" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" language="javascript" type="text/javascript"></script>
+    <script src="bootstrap/js/jquery-3.3.1.min.js" language="javascript" type="text/javascript"></script>
+    <script src="bootstrap/js/bootstrap.min.js" language="javascript" type="text/javascript"></script>
 </head>
 
 <body onload="detectie()">
@@ -42,14 +42,14 @@
                         <input class="form-control" style="width: 50%; display: inline;" type="search" placeholder="Money"
                             aria-label="Money" id="overridevalue">
                         <button class="btn btn-outline-success centerbutton" style="position:relative" type="button"
-                            onclick="overridemoney()">Override</button>
+                            onclick="overridemoney()">Ändern</button>
                     </div>
                     <div class="dropdown-item sp">
-                        <p>PIN ändern</p>
+                        <p>PIN überschreiben</p>
                         <input class="form-control" style="width: 50%; display: inline;" type="search" placeholder="PIN"
                             aria-label="PIN" id="pinovvalue">
                         <button class="btn btn-outline-success centerbutton" style="position:relative" type="button"
-                            onclick="overridepin()">Override</button>
+                            onclick="overridepin()">Ändern</button>
                     </div>
                 </div>
             </li>
