@@ -76,7 +76,7 @@ function insertcard() {
     mainmenu = false;
     moneybuttons.style.display = "none"; //geldtasten unsichtbar
     title.innerText = "PIN-EINGABE";
-    message.innerText = "Tipp: 1337";
+    message.innerText = "";//"Tipp: 1337";
     pin.innerText = "⠀" //Wir benutzen einen unicode "buchstaben" als platzhalter.
     PINstring = ""
     placeholder = true;
